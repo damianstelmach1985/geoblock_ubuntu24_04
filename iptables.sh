@@ -1,4 +1,5 @@
 iptables -F
+iptables -I INPUT -m set --match-set geoblock src -j DROP
 iptables -A INPUT -p tcp --dport 22 -s x.x.x.x -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j DROP
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
