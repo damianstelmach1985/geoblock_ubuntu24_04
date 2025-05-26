@@ -23,7 +23,7 @@ EOF
 
 chmod 700 /usr/local/sbin/boot_restore_iptables.sh
 
-# 4. Utworzenie jednostki systemd do przywracania ipset przy starcie
+# 5. Utworzenie jednostki systemd do przywracania ipset przy starcie
 cat > /etc/systemd/system/ipset-restore.service << EOF
 [Unit]
 Description=Przywracanie zbioru ipset
@@ -39,7 +39,7 @@ RemainAfterExit=yes
 WantedBy=multi-user.target
 EOF
 
-# 5. Utworzenie jednostki systemd do przywracania iptables przy starcie
+# 6. Utworzenie jednostki systemd do przywracania iptables przy starcie
 cat > /etc/systemd/system/iptables-restore.service << EOF
 [Unit]
 Description=Przywracanie reguł iptables
@@ -59,7 +59,7 @@ ExecStart=/usr/local/sbin/boot_restore_iptables.sh
 WantedBy=multi-user.target
 EOF
 
-# 6. Przeładowanie konfiguracji systemd i włączenie usług przy starcie
+# 7. Przeładowanie konfiguracji systemd i włączenie usług przy starcie
 systemctl daemon-reload
 systemctl start ipset-restore.service
 systemctl start iptables-restore.service
