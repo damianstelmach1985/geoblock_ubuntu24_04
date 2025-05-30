@@ -6,7 +6,7 @@ apt update
 # Instalacja ipset i location bez potwierdzania
 apt install -y ipset location
 
-# Poprawka w skrypcie Pythonowym location (wyrażenie regularne)
+# Poprawka niewalująca warning w skrypcie location (wyrażenie regularne)
 sed -i 's/re.match("\^AS(\\d+)\$",/re.match(r"^AS(\\d+)$",/' /usr/bin/location
 
 # Aktualizacja bazy danych z adresami IP
