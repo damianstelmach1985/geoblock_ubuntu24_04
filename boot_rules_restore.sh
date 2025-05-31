@@ -67,4 +67,3 @@ systemctl enable ipset-restore.service
 systemctl enable iptables-restore.service
 
 echo "Skrypt zakończony pomyślnie. Jednostki zostały utworzone i włączone."
-echo "Reguły zostaną automatycznie przywrócone przy następnym rozruchu systemu."
