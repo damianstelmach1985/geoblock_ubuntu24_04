@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 echo "start ip update"
 
 location update
