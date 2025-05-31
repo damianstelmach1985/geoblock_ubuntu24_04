@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 {
   echo "create geoblock hash:net family inet"
   for cc in RU AR; do
